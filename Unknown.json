@@ -1,0 +1,625 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%hive\nselect * from survey.usasurvey20180615 limit 10",
+      "user": "readonly",
+      "dateUpdated": "2018-06-01T17:31:20+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "usasurvey20180615.uid",
+              "index": 0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "usasurvey20180615.nickname",
+              "index": 1,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "usasurvey20180615.uid",
+              "index": 0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "usasurvey20180615.nickname",
+              "index": 1,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527240090510_-1334534652",
+      "id": "20180525-172130_412002054",
+      "dateCreated": "2018-05-25T05:21:30+0800",
+      "dateStarted": "2018-06-01T17:31:20+0800",
+      "dateFinished": "2018-06-01T17:31:20+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3735"
+    },
+    {
+      "text": "",
+      "dateUpdated": "2018-05-31T07:17:14+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527765423788_-2013600622",
+      "id": "20180531-191703_259740297",
+      "dateCreated": "2018-05-31T07:17:03+0800",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3736"
+    },
+    {
+      "title": "样本人数",
+      "text": "%hive\nselect count(*) from survey.usasurvey20180615",
+      "user": "readonly",
+      "dateUpdated": "2018-06-01T18:06:44+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "_c0",
+              "index": 0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "_c0",
+              "index": 0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "tableHide": false,
+        "title": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527240123297_-1065933947",
+      "id": "20180525-172203_433451576",
+      "dateCreated": "2018-05-25T05:22:03+0800",
+      "dateStarted": "2018-05-31T20:23:27+0800",
+      "dateFinished": "2018-05-31T20:23:45+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3737"
+    },
+    {
+      "title": "Q1样本等级分布",
+      "text": "%hive\r\nselect level_range, count(*) cnt from survey.usasurvey20180615\r\nwhere duration > 90 and  valid = 1\r\ngroup by level_range",
+      "user": "admin",
+      "dateUpdated": "2018-05-25T05:54:40+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "title": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527240242888_1045704290",
+      "id": "20180525-172402_1387412769",
+      "dateCreated": "2018-05-25T05:24:02+0800",
+      "dateStarted": "2018-05-25T05:49:49+0800",
+      "dateFinished": "2018-05-25T05:50:07+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3738"
+    },
+    {
+      "title": "样本VIP分布",
+      "text": "%hive\nselect vip_level,count(*) from survey.usasurvey20180615\nwhere duration >90 and valid = 1\ngroup by vip_level",
+      "user": "readonly",
+      "dateUpdated": "2018-06-01T20:34:36+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527240345086_-485810871",
+      "id": "20180525-172545_226767426",
+      "dateCreated": "2018-05-25T05:25:45+0800",
+      "dateStarted": "2018-06-01T20:34:36+0800",
+      "dateFinished": "2018-06-01T20:34:53+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3739"
+    },
+    {
+      "title": "Q2.which one of the following aspects will affect you the most to get a certain Valkyrie",
+      "text": "%hive\nselect q2,count(*) cnt\nfrom survey.usasurvey20180615\nwhere duration > 90 and valid = 1\ngroup by q2",
+      "user": "readonly",
+      "dateUpdated": "2018-05-31T20:36:08+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "q2",
+              "index": 0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "cnt",
+              "index": 1,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "q2",
+              "index": 0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "cnt",
+              "index": 1,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527240341263_-268827815",
+      "id": "20180525-172541_1715871189",
+      "dateCreated": "2018-05-25T05:25:41+0800",
+      "dateStarted": "2018-05-31T20:36:22+0800",
+      "dateFinished": "2018-05-31T20:36:51+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3740"
+    },
+    {
+      "title": "Q3.rate our newest Valkyrie",
+      "text": "%hive\r\nselect\r\nround(avg(cast(b.s1 as int)),2) Appearance,\r\nround(avg(cast(b.s2 as int)),2) Personality,\r\nround(avg(cast(b.s3 as int)),2) Combat_Flow,\r\nround(avg(cast(b.s4 as int)),2) Combat_Power,\r\nround(avg(cast(b.s5 as int)),2) Skills\r\nfrom survey.usasurvey20180615 a\r\nlateral view json_tuple(a.q3,'q1','q2','q3','q4','q5') b as s1,s2,s3,s4,s5\r\nwhere duration > 90 and valid = 1 and q3 <> ''  and vip_point<>\"0\"",
+      "user": "readonly",
+      "dateUpdated": "2018-05-31T20:37:11+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527240755674_532187625",
+      "id": "20180525-173235_1247224876",
+      "dateCreated": "2018-05-25T05:32:35+0800",
+      "dateStarted": "2018-05-31T20:37:29+0800",
+      "dateFinished": "2018-05-31T20:37:49+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3741"
+    },
+    {
+      "title": "Q4.what is your main goal when playing",
+      "text": "%hive\nselect\ncount(*) cnt,a.vip_level\nfrom \n(\n    select uid,vip_level from survey.usasurvey20180615 LATERAL VIEW explode(q4) r1 AS answer\n    where duration > 90 and valid = 1\n)a\ngroup by a.vip_level\n",
+      "user": "readonly",
+      "dateUpdated": "2018-06-01T20:24:20+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": null,
+            "yAxis": null
+          }
+        },
+        "enabled": true,
+        "title": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527241028310_93941660",
+      "id": "20180525-173708_1051145676",
+      "dateCreated": "2018-05-25T05:37:08+0800",
+      "dateStarted": "2018-06-01T20:24:20+0800",
+      "dateFinished": "2018-06-01T20:24:37+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3742"
+    },
+    {
+      "title": "Q5. are you aware of other ways to unlock new Valkyries besides Supplies and Shops",
+      "text": "%hive\nselect q5,count(*) cnt,vip_level\nfrom survey.usasurvey20180615\nwhere duration > 90 and  valid = 1\ngroup by q5,vip_level",
+      "user": "readonly",
+      "dateUpdated": "2018-06-01T18:20:17+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "q5",
+              "index": 0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "cnt",
+              "index": 1,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "q5",
+              "index": 0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "cnt",
+              "index": 1,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "title": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527241158974_-760384789",
+      "id": "20180525-173918_1979558074",
+      "dateCreated": "2018-05-25T05:39:18+0800",
+      "dateStarted": "2018-06-01T18:20:17+0800",
+      "dateFinished": "2018-06-01T19:28:53+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3743"
+    },
+    {
+      "title": "Q6. have you heard of [Extra Story - Sakura Samsara]",
+      "text": "%hive\nselect q6,count(*) cnt\nfrom survey.usasurvey20180615\nwhere duration > 90 and  valid = 1 and level >=16\ngroup by q6",
+      "user": "readonly",
+      "dateUpdated": "2018-06-04T22:19:39+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "title": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527241199270_-1880896179",
+      "id": "20180525-173959_1584425893",
+      "dateCreated": "2018-05-25T05:39:59+0800",
+      "dateStarted": "2018-06-04T22:19:39+0800",
+      "dateFinished": "2018-06-04T22:20:16+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3744"
+    },
+    {
+      "title": "Q6001. is there any reason why you decide to not play, or barely play Sakura Samsara",
+      "text": "%hive\r\nselect\r\ncount(distinct uid) cnt,a.level_range\r\nfrom\r\n(\r\n   select\r\n   uid,answer,level_range\r\n   from survey.usasurvey20180615 LATERAL VIEW explode(q6001) r1 AS answer\r\n   where size(q6001) > 0 and duration > 90 and valid = 1\r\n) a\r\ngroup by a.level_range\r\norder by cnt desc",
+      "user": "readonly",
+      "dateUpdated": "2018-06-04T19:12:47+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "cnt",
+              "index": 0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "cnt",
+              "index": 0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "title": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527241251206_1994907710",
+      "id": "20180525-174051_1660475554",
+      "dateCreated": "2018-05-25T05:40:51+0800",
+      "dateStarted": "2018-06-04T19:12:47+0800",
+      "dateFinished": "2018-06-04T19:13:58+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3745"
+    },
+    {
+      "title": "Q6002. about Sakura Samsara, how do you agree with the following statements",
+      "text": "%hive\r\nselect\r\nround(avg(cast(b.s1 as int)),2) `Immersive storyline`,\r\nround(avg(cast(b.s2 as int)),2) `New map is awesome`,\r\nround(avg(cast(b.s3 as int)),2) `Collecting is a fun feature`,\r\nround(avg(cast(b.s4 as int)),2) `Rewards are more than worth the effort`,\r\nround(avg(cast(b.s5 as int)),2) `New bosses are cool`,\r\nround(avg(cast(b.s6 as int)),2) `Adventure Tasks difficulty is just right`,\r\nround(avg(cast(b.s7 as int)),2) `Game mode is easy to understand, easy to play`,\r\nlevel_range\r\nfrom survey.usasurvey20180615 a\r\nlateral view json_tuple(a.q6002,'q1','q2','q3','q4','q5','q6','q7') b as s1,s2,s3,s4,s5,s6,s7\r\nwhere duration > 90 and valid = 1 and q6002 <> ''\r\ngroup by level_range",
+      "user": "readonly",
+      "dateUpdated": "2018-06-04T22:52:49+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "immersive storyline",
+              "index": 0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "new map is awesome",
+              "index": 1,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "immersive storyline",
+              "index": 0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "new map is awesome",
+              "index": 1,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "title": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527241296784_-1502398496",
+      "id": "20180525-174136_885087940",
+      "dateCreated": "2018-05-25T05:41:36+0800",
+      "dateStarted": "2018-06-04T22:52:49+0800",
+      "dateFinished": "2018-06-04T22:53:08+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3746"
+    },
+    {
+      "title": "Q6003. how would you rate the following game modes",
+      "text": "%hive\r\nselect\r\nround(avg(cast(b.s1 as int)),2) option1,\r\nround(avg(cast(b.s2 as int)),2) option2,\r\nround(avg(cast(b.s3 as int)),2) option3\r\nfrom survey.usasurvey20180615 a\r\nlateral view json_tuple(a.q6003,'q1','q2','q3') b as s1,s2,s3\r\nwhere duration > 90 and valid = 1 and q6003 <> '' and level >= 45 and level<50",
+      "user": "readonly",
+      "dateUpdated": "2018-06-04T22:32:22+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "option1",
+              "index": 0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "option2",
+              "index": 1,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "option1",
+              "index": 0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "option2",
+              "index": 1,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "title": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527241678506_2101910064",
+      "id": "20180525-174758_1534997920",
+      "dateCreated": "2018-05-25T05:47:58+0800",
+      "dateStarted": "2018-06-04T22:32:22+0800",
+      "dateFinished": "2018-06-04T22:32:40+0800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3747"
+    },
+    {
+      "title": "Q7. freedom-text",
+      "text": "",
+      "dateUpdated": "2018-05-25T05:51:53+0800",
+      "config": {
+        "colWidth": 12,
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1527241725027_-1401351265",
+      "id": "20180525-174845_874692776",
+      "dateCreated": "2018-05-25T05:48:45+0800",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:3748"
+    }
+  ],
+  "name": "USA_Survey_20180518",
+  "id": "2DEM2K66B",
+  "angularObjects": {
+    "2C3NUK5PR:shared_process": [],
+    "2C6M6V3BD:shared_process": [],
+    "2C3BTW9H2:shared_process": [],
+    "2C5KVZWZT:shared_process": [],
+    "2C5ZA782V:shared_process": [],
+    "2C3D1PT4X:shared_process": [],
+    "2C3VM57QR:shared_process": [],
+    "2C36615SK:shared_process": [],
+    "2C6PEG3XP:shared_process": [],
+    "2C5YQAN6X:shared_process": [],
+    "2C4KURRX7:shared_process": [],
+    "2C3CEY2P3:shared_process": [],
+    "2C63GUSGC:shared_process": [],
+    "2C4XE5YCK:shared_process": [],
+    "2C4ZJZ9RP:shared_process": [],
+    "2C5UU7V11:shared_process": [],
+    "2C479RV9B:shared_process": [],
+    "2C6H24RD1:shared_process": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}
